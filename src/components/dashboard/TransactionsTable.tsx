@@ -1,5 +1,3 @@
-import React from "react";
-
 type Transaction = {
   buyer: string;
   seller: string;

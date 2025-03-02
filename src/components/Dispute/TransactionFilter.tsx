@@ -1,4 +1,3 @@
-import React from "react";
 import { Search, Calendar } from "lucide-react";
 
 export const TransactionFilter = () => {

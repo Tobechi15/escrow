@@ -1,4 +1,3 @@
-import React from "react";
 import { Eye, ArrowUpRight, AlertCircle } from "lucide-react";
 
 const StatusBadge = ({
