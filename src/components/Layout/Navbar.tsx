@@ -11,10 +11,10 @@ export const Navbar = () => {
   return (
     <>
       {/* Navbar - Always Visible */}
-      <nav className="fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 z-50">
+      <nav className="fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 z-[60]">
         <div className="h-full flex items-center justify-between px-4 sm:px-6">
-          {/* Logo - Fixes visibility issue */}
-          <h1 className="text-lg sm:text-xl font-bold text-blue-600 z-50">Escrow Platform</h1>
+          {/* Logo */}
+          <h1 className="text-lg sm:text-xl font-bold text-blue-600">Escrow Platform</h1>
 
           {/* Desktop Menu */}
           <div className="hidden sm:flex items-center space-x-4">
@@ -33,24 +33,24 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden p-2 rounded-full hover:bg-gray-100 z-50"
+            className="sm:hidden p-2 rounded-full hover:bg-gray-100 z-[70]"
           >
             {isOpen ? <X className="w-6 h-6 text-gray-600" /> : <Menu className="w-6 h-6 text-gray-600" />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay with Blur Effect - Placed BELOW Navbar */}
-      <div
-        className={`fixed inset-0 bg-black bg-opacity-30 backdrop-blur-md transition-opacity duration-300 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-        onClick={closeMenu} // Clicking outside closes the menu
-      />
+      {/* Background Blur Overlay (Higher z-index to cover all elements) */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-md z-[50]"
+          onClick={closeMenu} // Clicking outside closes the menu
+        />
+      )}
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu (Above Blur but Below Navbar) */}
       <div
-        className={`sm:hidden fixed top-16 left-1/2 transform -translate-x-1/2 w-11/12 bg-white border border-gray-200 shadow-md rounded-lg transition-all duration-300 ease-in-out z-50 ${
+        className={`sm:hidden fixed top-16 left-1/2 transform -translate-x-1/2 w-11/12 bg-white border border-gray-200 shadow-md rounded-lg transition-all duration-300 ease-in-out z-[55] ${
           isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
         }`}
       >
