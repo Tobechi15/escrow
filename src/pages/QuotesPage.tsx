@@ -1,4 +1,3 @@
-import React from "react";
 import { Calendar, Check, X } from "lucide-react";
 
 export const QuotesPage = () => {

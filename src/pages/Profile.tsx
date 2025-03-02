@@ -1,5 +1,3 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import { Navbar } from "../components/Layout/Navbar";
 import { Sidebar } from "../components/Layout/Sidebar";
 import { ProfileSection } from "../components/Profile/ProfileSection";
